@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply w-full flex justify-center items-center flex-col;
+}
+.contain {
+  @apply w-[98%] 2xl:w-[1440px];
+}
+.active-tab {
+  background: #009ca0;
+  color: white;
+}
+.active-tab-parent {
+  background: #003471;
+  color: white;
+}
