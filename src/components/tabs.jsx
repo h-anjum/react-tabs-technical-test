@@ -70,7 +70,10 @@ const DonationTabs = () => {
             monthlyMoneyQuantities.map((quantity, index) => (
               <div
                 key={index}
-                onClick={() => handleSubTabMonthlyClick(index)}
+                onClick={() => {
+                  if (index !== onceMoneyQuantities.length - 1)
+                    return handleSubTabMonthlyClick(index);
+                }}
                 className={classNames("donation-option", {
                   "active-tab": activeSubTabMonthly === index,
                   "last-child": index === monthlyMoneyQuantities.length - 1,
@@ -78,7 +81,7 @@ const DonationTabs = () => {
               >
                 {index === monthlyMoneyQuantities.length - 1
                   ? selectedAmount
-                    ? `£${selectedAmount}`
+                    ? `Donate £${selectedAmount} monthly `
                     : "Other Amount"
                   : `£${quantity}`}
               </div>
@@ -87,7 +90,10 @@ const DonationTabs = () => {
             onceMoneyQuantities.map((quantity, index) => (
               <div
                 key={index}
-                onClick={() => handleSubTabOnceClick(index)}
+                onClick={() => {
+                  if (index !== onceMoneyQuantities.length - 1)
+                    return handleSubTabOnceClick(index);
+                }}
                 className={classNames("donation-option", {
                   "active-tab": activeSubTabOnce === index,
                   "last-child": index === onceMoneyQuantities.length - 1,
@@ -95,7 +101,7 @@ const DonationTabs = () => {
               >
                 {index === onceMoneyQuantities.length - 1
                   ? selectedAmount
-                    ? `£${selectedAmount}`
+                    ? `Donate £${selectedAmount} daily`
                     : "Other Amount"
                   : `£${quantity}`}
               </div>
@@ -104,8 +110,8 @@ const DonationTabs = () => {
         <div className="donation-info">
           <p>
             {activeMainTab === 0
-              ? `Donate £40 could help answer an emergency call to our Animal rescue line`
-              : `£12 could help answer an emergency call to our Animal rescue line`}
+              ? `Donate £${selectedAmount} could help answer an emergency call to our Animal rescue line`
+              : `£${selectedAmount} Could help answer an Animal Rescue Team take on an urgent animal rescue`}
           </p>
           <div className="caret-up">
             <AiFillCaretUp size={30} />
@@ -113,7 +119,23 @@ const DonationTabs = () => {
         </div>
       </div>
       <div className="payment-options">
-        <div className="underline font-medium">I would like to pay</div>
+        {activeMainTab === 0 && (
+          <div
+            onClick={() => handleMainTabClick(1)}
+            className="underline font-medium"
+          >
+            I would like to daily
+          </div>
+        )}
+        {activeMainTab === 1 && (
+          <div
+            onClick={() => handleMainTabClick(0)}
+            className="underline font-medium"
+          >
+            I would like to monthly
+          </div>
+        )}
+
         <div className="payment-methods">
           <img className="logo" src="/image.png" alt="" />
           <img className="logo" src="/mastercard-logo.png" alt="" />

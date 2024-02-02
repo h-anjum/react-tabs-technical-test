@@ -2,117 +2,118 @@
 
 /* Main Tabs */
 .tabs-container {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.6rem;
-    font-weight: bold;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  font-weight: bold;
+}
+
+.tab-parent {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
   }
-  
-  .tab-parent {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #f0f0f0;
-    }
-  
-    &.active-tab-parent {
-      border-color: #003471;
-      background-color: #003471;
-      color: #fff;
-    }
+
+  &.active-tab-parent {
+    border-color: #003471;
+    background-color: #003471;
+    color: #fff;
   }
-  
-  /* Donation Options */
-  .tab-content {
-    border: 1px solid #ccc;
-    padding: 20px;
+}
+
+/* Donation Options */
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.donation-options {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.donation-option {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  height: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
   }
-  
-  .donation-options {
-  
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 100%;
-    font-weight: bold;
-    justify-content: space-between;
+
+  &.active-tab {
+    border-color: #009ca0;
+    background-color: #009ca0;
+    color: #fff;
   }
-  
-  .donation-option {
-    width: 100%;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    height: 40px;
-    width: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #f0f0f0;
-    }
-  
-    &.active-tab {
-      border-color: #009ca0;
-      background-color: #009ca0;
-      color: #fff;
-    }
-  
-    &.last-child {
-      background-color: #fe9235;
-      color: black;
-    }
-    @media (min-width: 768px) {
-      width: 130px;
-    }
+
+  &.last-child {
+    width: 260px;
+    background-color: #fe9235;
+    color: black;
   }
-  
-  .donation-info {
-    margin-top: 1.6rem;
-    background-color: #ffce9f;
-    padding: 10px;
-    position: relative;
-  
-    p {
-      margin: 0;
-    }
-  
-    .caret-up {
-      position: absolute;
-      top: -20px;
-      right: 16px;
-      color: #ffce9f;
-    }
+  @media (min-width: 768px) {
+    width: 130px;
   }
-  
-  /* Payment Options */
-  .payment-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #eaedf4;
-    padding: 0 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    height: 80px;
+}
+
+.donation-info {
+  margin-top: 1.6rem;
+  background-color: #ffce9f;
+  padding: 10px;
+  position: relative;
+
+  p {
+    margin: 0;
   }
-  
-  .underline {
-    text-decoration: underline;
-    font-weight: bold;
+
+  .caret-up {
+    position: absolute;
+    top: -20px;
+    right: 16px;
+    color: #ffce9f;
   }
-  
-  .payment-methods {
-    display: flex;
-    gap: 3px;
-    align-items: center;
-  
-    .logo {
-      width: 40px;
-    }
+}
+
+/* Payment Options */
+.payment-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaedf4;
+  padding: 0 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  height: 80px;
+  cursor: pointer;
+}
+
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+
+  .logo {
+    width: 40px;
   }
-  
+}
